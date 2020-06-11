@@ -135,13 +135,13 @@ UINavigationControllerDelegate {
         }
 
         let memeTextAttributes: [String:Any] = [
-            NSAttributedString.Key.strokeColor.rawValue: UIColor.black, /* TODO: fill in appropriate UIColor */
+            NSAttributedString.Key.strokeColor.rawValue: UIColor.black,
             NSAttributedString.Key.foregroundColor.rawValue: UIColor.white,
             NSAttributedString.Key.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
             NSAttributedString.Key.strokeWidth.rawValue: -6]
      
 
-        //struct for meme attributes
+        
         struct Meme {
             var topText: String
             var bottomText: String
@@ -150,7 +150,7 @@ UINavigationControllerDelegate {
             
         }
         
-        //MARK: -Method for generating the meme
+        
         func generateMemedImage() -> UIImage {
             
             //TODO: Hide toolbar and navbar
@@ -197,23 +197,18 @@ UINavigationControllerDelegate {
             self.present(controller, animated: true, completion: nil)
         }
         
-        
-
-
     }
 
 
-    // Helper function inserted by Swift 4.2 migrator.
     fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
         return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
     }
 
-    // Helper function inserted by Swift 4.2 migrator.
+    
     fileprivate func convertToNSAttributedStringKeyDictionary(_ input: [String: Any]) -> [NSAttributedString.Key: Any] {
         return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
     }
 
-    // Helper function inserted by Swift 4.2 migrator.
     fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
         return input.rawValue
 }
