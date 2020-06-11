@@ -23,23 +23,16 @@ UINavigationControllerDelegate {
     
     let textDelegate = TextField()
     
-    //Enabling/disabling camera button
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
-        
-    }
+        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-            
-
             attributes(textField: topField)
             attributes(textField: bottomField)
-
-              //Setting the delegates for text fields
             self.bottomField.delegate = textDelegate
             self.topField.delegate=textDelegate
             
@@ -65,7 +58,6 @@ UINavigationControllerDelegate {
     }
     
     @IBAction func pickAnImageFromCamera(_ sender: Any) {
-        
         openImagePicker(UIImagePickerController.SourceType.camera)
 
         //let imagePickerController = UIImagePickerController()
@@ -87,8 +79,8 @@ UINavigationControllerDelegate {
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-    // Local variable inserted by Swift 4.2 migrator.
-    let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+    
+        let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 
             if let picker = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage
             {
@@ -121,8 +113,8 @@ UINavigationControllerDelegate {
             let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
             return keyboardSize.cgRectValue.height
         }
-        //MARK: -subscribeToKeyboardNotifications
-        func subscribeToKeyboardNotifications() {
+        
+    func subscribeToKeyboardNotifications() {
             
             NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
             NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -152,35 +144,24 @@ UINavigationControllerDelegate {
         
         
         func generateMemedImage() -> UIImage {
-            
-            //TODO: Hide toolbar and navbar
             hideToolbars(true)
-
-            
-            //Render view to an image
             UIGraphicsBeginImageContext(self.view.frame.size)
             view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
             let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
-            
-            //TODO: Show toolbar and navbar
             hideToolbars(false)
-            
             return memedImage
-        }
+            }
         func hideToolbars(_ hide: Bool) {
             toolbar.isHidden=hide
             navBar.isHidden=hide
-        }
+            }
         
-        
-        //Saving the meme
         func save() {
             let memedImage = generateMemedImage()
             _ = Meme(topText: topField.text!, bottomText: bottomField.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
         }
         
-        //MARK: -The activity view
         @IBAction func activityView(_ sender: Any) {
             
             let memedImage = generateMemedImage()
