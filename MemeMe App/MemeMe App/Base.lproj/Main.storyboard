@@ -29,7 +29,7 @@
                                 </items>
                             </navigationBar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lmi-X9-zll">
-                                <rect key="frame" x="20" y="159" width="358" height="600"/>
+                                <rect key="frame" x="20" y="159" width="374" height="600"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Top Field" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yJI-n9-ee4">
                                 <rect key="frame" x="163.5" y="202" width="87" height="34"/>
@@ -57,7 +57,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="FSJ-8j-3Tv"/>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bottom Field" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cx6-cr-FxS">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bottom Field" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cx6-cr-FxS">
                                 <rect key="frame" x="149" y="672" width="100" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="HzI-6Y-vZT"/>
@@ -83,7 +83,7 @@
                             <constraint firstItem="5WP-Il-d3k" firstAttribute="trailing" secondItem="fDi-E5-8x8" secondAttribute="trailing" id="cg9-aJ-Ugx"/>
                             <constraint firstItem="5WP-Il-d3k" firstAttribute="leading" secondItem="fDi-E5-8x8" secondAttribute="leading" id="dUR-tC-jBB"/>
                             <constraint firstItem="5WP-Il-d3k" firstAttribute="centerX" secondItem="yJI-n9-ee4" secondAttribute="centerX" id="uS8-zW-ao9"/>
-                            <constraint firstItem="Lmi-X9-zll" firstAttribute="centerX" secondItem="Cx6-cr-FxS" secondAttribute="centerX" id="vet-Oc-Oan"/>
+                            <constraint firstItem="Lmi-X9-zll" firstAttribute="centerX" secondItem="Cx6-cr-FxS" secondAttribute="centerX" constant="8" id="vet-Oc-Oan"/>
                             <constraint firstAttribute="bottom" secondItem="Cx6-cr-FxS" secondAttribute="bottom" constant="190" id="zm8-fl-E40"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
