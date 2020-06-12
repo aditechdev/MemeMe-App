@@ -51,23 +51,10 @@ UINavigationControllerDelegate {
 
     @IBAction func pickAnImage(_ sender: Any) {
         openImagePicker(UIImagePickerController.SourceType.photoLibrary)
-        //let imagePickerController = UIImagePickerController()
-        //imagePickerController.delegate = self
-        //imagePickerController.sourceType = .photoLibrary
-    //present(imagePickerController, animated: true,completion: nil)
-        
     }
     
     @IBAction func pickAnImageFromCamera(_ sender: Any) {
         openImagePicker(UIImagePickerController.SourceType.camera)
-
-        //let imagePickerController = UIImagePickerController()
-        //imagePickerController.delegate = self
-        //imagePickerController.sourceType = .camera
-        //if UIImagePickerController.isSourceTypeAvailable(.camera) {
-        //present(imagePickerController, animated: true, completion: nil)
-           // }
-    
     }
     func openImagePicker(_ type: UIImagePickerController.SourceType){
         let picker = UIImagePickerController()
